@@ -1,7 +1,7 @@
 // ADD THE ES7 REACT REDUX SNIPPET EXTENSION ///
 //  ADD GOGGLEMAPP REACT FROM gogglemapsreact///
-
 import React from "react";
+import LocationMaker from "../LocationMarker/LocationMaker";
 import GoogleMapReact from "google-map-react";
 
 function Map({ center, zoom }) {
@@ -13,15 +13,17 @@ function Map({ center, zoom }) {
         bootstrapURLKeys={{ key: "AIzaSyBilaDqHZC6axu2_xUjeT7D8p-QRwsiJj8" }}
         defaultCenter={center}
         defaultZoom={zoom}
-      ></GoogleMapReact>
+      >
+        <LocationMaker lat={center.lat} lng={center.lng} />
+      </GoogleMapReact>
     </div>
   );
 }
 /// Maps properties will be outside the function
 Map.defaultProps = {
   center: {
-    lat: 9.082,
-    lng: 8.6753,
+    lat: 8.8941,
+    lng: 7.186,
   },
   zoom: 6,
 };
